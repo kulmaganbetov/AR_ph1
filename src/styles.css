@@ -1,0 +1,26 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+.app-shell { max-width: 720px; margin: 0 auto; padding: 1rem; }
+header h1 { margin: 0 0 0.75rem; }
+nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; }
+nav a { text-decoration: none; text-align: center; padding: 0.5rem; border-radius: 10px; background: #e2e8f0; color: #0f172a; font-size: 0.875rem; }
+nav a.active { background: #0f172a; color: #fff; }
+.card { margin-top: 1rem; background: white; border-radius: 14px; padding: 1rem; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08); }
+.formula { font-size: 1.3rem; font-weight: 700; background: #f1f5f9; padding: 0.75rem; border-radius: 10px; text-align: center; margin: 1rem 0; }
+.row { display: flex; gap: 0.75rem; }
+button { border: none; border-radius: 10px; padding: 0.65rem 0.85rem; background: #0ea5e9; color: white; cursor: pointer; }
+button.secondary { background: #334155; }
+.ar-container { width: 100%; min-height: 360px; background: #000; border-radius: 10px; overflow: hidden; }
+.overlay { color: #0ea5e9; font-weight: 700; }
+.hint { font-size: 0.875rem; color: #475569; }
+.chat-list { display: flex; flex-direction: column; gap: 0.5rem; min-height: 260px; max-height: 360px; overflow-y: auto; background: #f8fafc; border-radius: 10px; padding: 0.75rem; }
+.bubble { padding: 0.6rem 0.75rem; border-radius: 10px; max-width: 85%; }
+.bubble.user { margin-left: auto; background: #0ea5e9; color: white; }
+.bubble.assistant { background: #e2e8f0; }
+.chat-controls { margin-top: 0.75rem; display: flex; gap: 0.5rem; }
+.chat-controls input { flex: 1; border: 1px solid #cbd5e1; border-radius: 10px; padding: 0.65rem; }
