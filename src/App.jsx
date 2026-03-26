@@ -6,6 +6,10 @@ import ARView from './pages/ARView';
 import TestPage from './pages/TestPage';
 import ResultPage from './pages/ResultPage';
 import ChatAI from './pages/ChatAI';
+import HomePage from './pages/HomePage';
+import LabPage from './pages/LabPage';
+import ARPage from './pages/ARPage';
+import AIChatPage from './pages/AIChatPage';
 
 function App() {
   return (
@@ -30,6 +34,23 @@ function App() {
         <NavLink to="/labs">Labs</NavLink>
         <NavLink to="/ai">AI</NavLink>
       </nav>
+      <header>
+        <h1>Physics AR</h1>
+        <nav>
+          <NavLink to="/">Басты бет</NavLink>
+          <NavLink to="/lab">Зертхана</NavLink>
+          <NavLink to="/ar">AR</NavLink>
+          <NavLink to="/ai">AI</NavLink>
+        </nav>
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/lab" element={<LabPage />} />
+          <Route path="/ar" element={<ARPage />} />
+          <Route path="/ai" element={<AIChatPage />} />
+        </Routes>
+      </main>
     </div>
   );
 }

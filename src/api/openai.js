@@ -6,6 +6,13 @@ export async function askPhysicsAssistant(userMessage, labTitle = 'General Physi
 
   if (!apiKey) {
     return `Mock жауап (${labTitle}): ${userMessage} сұрағына қысқаша түсіндірме. Формуланы қолданып, қадаммен шешім жаса.`;
+const SYSTEM_PROMPT = 'You are a physics teacher. Explain simply for high school students.';
+
+export async function askPhysicsAssistant(userMessage) {
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+
+  if (!apiKey) {
+    return `Mock жауап: "${userMessage}" сұрағына сәйкес, Ом заңы бойынша V = I * R. Кернеу ток пен кедергіге тәуелді.`;
   }
 
   const response = await fetch(API_URL, {
@@ -18,6 +25,7 @@ export async function askPhysicsAssistant(userMessage, labTitle = 'General Physi
       model: 'gpt-4o-mini',
       messages: [
         { role: 'system', content: systemPrompt },
+        { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: userMessage }
       ],
       temperature: 0.4
